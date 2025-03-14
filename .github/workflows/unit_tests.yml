@@ -2,12 +2,16 @@ name: Build
 on:
   push:
 jobs:
-  build-project:
+  unit-tests:
     name: Build Project
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout Project
         uses: actions/checkout@v4.2.2
+
+      - name:
+        run: |
+          sudo apt-get install -y libgtest-dev libgmock-dev
 
       - name: Build Project
         uses: threeal/cmake-action@v2.1.0
@@ -15,6 +19,7 @@ jobs:
       - name:
         run: |
           ./build/bin/tests/test_runner
+
       
       
       

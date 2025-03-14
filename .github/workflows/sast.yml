@@ -2,7 +2,7 @@ name: Build
 on:
   push:
 jobs:
-  build-project:
+  sast:
     name: Build Project
     runs-on: ubuntu-24.04
     steps:

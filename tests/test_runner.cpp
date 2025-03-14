@@ -1,3 +1,5 @@
+// Copyright 2019 Shanaka Prageeth
+
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 

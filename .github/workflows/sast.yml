@@ -16,6 +16,8 @@ jobs:
       - name: Static Analysis
         run: |
           cpplint --recursive src/
+          cpplint --recursive include/
+          cpplint --recursive tests/
       
       
 

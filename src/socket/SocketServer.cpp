@@ -1,3 +1,5 @@
+// Copyright 2019 Shanaka Prageeth
+
 #include "socket/SocketServer.hpp"
 #include <unistd.h>
 #include <stdio.h>
@@ -5,10 +7,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <iostream>
+#include <cstdio>
+#include <string>
+
+using std::cout;
+using std::endl;
+using std::string;
 
 #define PORT 8080
-
-using namespace std;
 
 SocketServer::SocketServer() {
     server_fd = -1;
@@ -26,7 +32,9 @@ int SocketServer::initSocket() {
 }
 
 int SocketServer::setSocket() {
-    socket_set = setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt));
+    socket_set = setsockopt(server_fd,
+                            SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT,
+                            &opt, sizeof(opt));
     if (socket_set) {
         perror("Setsockopt failed");
         return -1;
@@ -39,7 +47,8 @@ int SocketServer::bindAndListen() {
     address.sin_addr.s_addr = INADDR_ANY;
     address.sin_port = htons(8080);
 
-    if (bind(server_fd, (struct sockaddr *)&address, sizeof(address)) < 0) {
+    if (bind(server_fd,
+            (struct sockaddr *)&address, sizeof(address)) < 0) {
         perror("Bind failed");
         return -1;
     }
@@ -51,7 +60,8 @@ int SocketServer::bindAndListen() {
 }
 
 int SocketServer::acceptClients() {
-    new_socket = accept(server_fd, (struct sockaddr *)&address, (socklen_t *)&addrlen);
+    new_socket = accept(server_fd, (struct sockaddr *)&address,
+                        reinterpret_cast<socklen_t *>(&addrlen));
     if (new_socket < 0) {
         perror("Accept failed");
         return -1;
@@ -67,7 +77,7 @@ int SocketServer::readAndSend(const char *rcvMsg, const char *sendMsg) {
         perror("Read failed");
         return -1;
     }
-    std::cout << "Received: " << buffer << std::endl;
+    cout << "Received: " << buffer << endl;
 
     if (send(new_socket, sendMsg, strlen(sendMsg), 0) < 0) {
         perror("Send failed");

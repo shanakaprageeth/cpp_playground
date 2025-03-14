@@ -3,7 +3,7 @@ on:
   push:
 jobs:
   unit-tests:
-    name: Build Project
+    name: Unit-Tests
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout Project

@@ -3,7 +3,7 @@ on:
   push:
 jobs:
   sast:
-    name: Build Project
+    name: SAST
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout Project

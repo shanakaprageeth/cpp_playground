@@ -1,0 +1,8 @@
+#!/bin/bash
+# Run CI tests before committing
+
+/workspaces/cpptech/ci_tests.sh
+if [ $? -ne 0 ]; then
+    echo "CI tests failed. Commit aborted."
+    exit 1
+fi

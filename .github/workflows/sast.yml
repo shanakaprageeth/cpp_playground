@@ -16,7 +16,8 @@ jobs:
       
       - name: Static Analysis
         run: |
-          cppcheck --enable=all --suppress=missingInclude src/ include/ tests/ examples/
+          cpplint --recursive src/ include/ tests/examples/
+          cppcheck --enable=all --suppress=missingInclude --suppress=missingIncludeSystem src/ include/ tests/ examples/
       
       - name: Static Analysis Misra
         run: |

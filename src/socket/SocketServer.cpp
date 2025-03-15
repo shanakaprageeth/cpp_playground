@@ -28,7 +28,7 @@ int SocketServer::initSocket() {
         ret_val = -1;
         perror("Socket failed");
     }
-    return ret_val;  // Single return statement
+    return ret_val;
 }
 
 int SocketServer::setSocket() {
@@ -40,7 +40,7 @@ int SocketServer::setSocket() {
         ret_val = -1;
         perror("Setsockopt failed");
     }
-    return ret_val;  // Single return statement
+    return ret_val;
 }
 
 int SocketServer::bindAndListen() {
@@ -58,7 +58,7 @@ int SocketServer::bindAndListen() {
         ret_val = -1;
         perror("Listen failed");
     }
-    return ret_val;  // Single return statement
+    return ret_val;
 }
 
 int SocketServer::acceptClients() {
@@ -73,7 +73,7 @@ int SocketServer::acceptClients() {
         accepted_sockets.push_back(new_socket);
         ret_val = new_socket;
     }
-    return ret_val;  // Single return statement
+    return ret_val;
 }
 
 int SocketServer::readAndSend(const char *rcvMsg, const char *sendMsg) {
@@ -91,5 +91,5 @@ int SocketServer::readAndSend(const char *rcvMsg, const char *sendMsg) {
             perror("Send failed");
         }
     }
-    return ret_val;  // Single return statement
+    return ret_val;
 }

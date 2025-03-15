@@ -41,7 +41,7 @@ int main() {
                 string sendString;
                 string doString;
                 do {
-                    char buffer[1024] = {0}; // Moved buffer here
+                    char buffer[1024] = {0};
                     cout << "Send: " << endl;
                     cin >> sendString;
                     char *sendMsg = reinterpret_cast<char*>(

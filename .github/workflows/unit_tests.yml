@@ -20,10 +20,3 @@ jobs:
         run: |
           ./build/bin/tests/test_runner
 
-      
-      
-      
-
-      
-      
-          

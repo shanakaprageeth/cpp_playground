@@ -12,15 +12,15 @@ jobs:
       - name: Dependencies
         run: |
           pip3 install cpplint
+          sudo apt-get install cpplint
       
       - name: Static Analysis
         run: |
-          cpplint --recursive src/
-          cpplint --recursive include/
-          cpplint --recursive tests/
+          cppcheck --enable=all --suppress=missingInclude src/ include/ tests/ examples/
       
-      
+      - name: Static Analysis Misra
+        run: |
+          cppcheck --addon=cpplint_config/misra.json  src include examples
 
-      
       
           

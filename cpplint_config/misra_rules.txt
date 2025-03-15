@@ -1,0 +1,75 @@
+# Appendix A Summary of guidelines
+
+Rule 1.1 Required  
+R1.1 All code shall conform to ISO/IEC 9899:2011 (C11).
+
+Rule 2.1 Required  
+R2.1 Assembly language shall be encapsulated and isolated from the rest of the code.
+
+Rule 2.2 Required  
+R2.2 Only characters from the basic source character set and the execution character set shall appear in the source code.
+
+Rule 5.1 Required  
+R5.1 Identifiers in the code shall not rely on the significance of more than 31 characters.
+
+Rule 6.3 Advisory  
+R6.3 Typedefs that indicate size and signedness shall be used in place of the basic numerical types.
+
+Rule 8.7 Required  
+R8.7 Objects with no linkage shall be defined at block scope.
+
+Rule 8.13 Advisory  
+R8.13 A pointer should point to a const-qualified type to avoid unintended modifications.
+
+Rule 9.1 Required  
+R9.1 Automatic variables shall be explicitly initialized before their first use.
+
+Rule 10.1 Mandatory  
+R10.1 The value of an expression shall be the same under any evaluation order.
+
+Rule 11.3 Mandatory  
+R11.3 A cast shall not be performed between a pointer to object type and a pointer to a different object type.
+
+Rule 12.1 Advisory  
+R12.1 Parentheses shall be used to explicitly specify the precedence of operators in expressions.
+
+Rule 14.1 Required  
+R14.1 Code that cannot be executed shall not be present in the program.
+
+Rule 14.3 Required  
+R14.3 Controlling expressions in conditional statements shall not always evaluate to the same value.
+
+Rule 15.5 Advisory  
+R15.5 A function should have a single return statement at the end of the function to ensure maintainability and readability.
+
+Rule 16.1 Required  
+R16.1 Functions shall not use variable argument lists (e.g., `...` in function declarations).
+
+Rule 17.4 Mandatory  
+R17.4 Pointer arithmetic shall be restricted to array indexing.
+
+Rule 18.1 Required  
+R18.1 Header files shall use include guards or `#pragma once` to prevent multiple inclusions.
+
+Rule 20.1 Advisory  
+R20.1 Reserved identifiers, macros, and functions in the standard library shall not be redefined.
+
+Rule 21.1 Required  
+R21.1 Standard library functions shall be used only as defined by the standard.
+
+Rule 22.1 Required  
+R22.1 Dynamically allocated resources shall be explicitly released to avoid memory leaks.
+
+Rule 22.2 Required  
+R22.2 Memory that has been freed shall not be accessed or freed again.
+
+Rule 22.3 Required  
+R22.3 Files shall not be opened multiple times without being closed in between.
+
+Rule 23.1 Advisory  
+R23.1 The `goto` statement shall not be used unless absolutely necessary and justified.
+
+Rule 23.2 Advisory  
+R23.2 Inline assembly shall only be used when no alternative exists and shall be encapsulated.
+
+# Add more rules as needed...

@@ -6,6 +6,7 @@
 // Use specific using declarations instead of using-directive
 using std::cin;
 using std::cout;
+using std::endl;
 using std::string;
 
 // Entry point of the program: initializes and runs the server
@@ -22,7 +23,7 @@ int main() {
     do {
         cout << "Send: " << endl;
         cin >> sendString;
-        char *sendMsg = reinterpret_cast<char*>(sendString.c_str());
+        const char *sendMsg = sendString.c_str();
         myserver.readAndSend(buffer, sendMsg);
         cout << "Send another message (y/n): ";
         cin >> doString;

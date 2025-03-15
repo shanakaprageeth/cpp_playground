@@ -12,7 +12,7 @@ jobs:
       - name: Dependencies
         run: |
           pip3 install cpplint
-          sudo apt-get install cpplint
+          sudo apt-get install -y cppcheck
       
       - name: Static Analysis
         run: |
